@@ -1,6 +1,6 @@
 import groq from 'groq'
 
-export const HOME_QUERY = groq`*[_id == "home"][0]{ title, siteTitle }`
+export const HOME_QUERY = groq`*[_id == "home"][0]{ title, subtitle, siteTitle }`
 
 export const RECORDS_QUERY = groq`*[_type == "record"][0...12]|order(title asc){
     _id,

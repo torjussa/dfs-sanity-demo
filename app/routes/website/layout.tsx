@@ -3,9 +3,8 @@ import {VisualEditing} from '@sanity/visual-editing/react-router'
 import {lazy, Suspense} from 'react'
 import {Outlet, useLocation, useOutletContext} from 'react-router'
 
-import {Footer} from '~/components/Footer'
 import {Header} from '~/components/Header'
-import {Title} from '~/components/Title'
+import {Title, Subtitle} from '~/components/Title'
 import {loadQuery} from '~/sanity/loader.server'
 import {loadQueryOptions} from '~/sanity/loadQueryOptions.server'
 import {HOME_QUERY} from '~/sanity/queries'
@@ -59,9 +58,11 @@ export default function Website({loaderData}: Route.ComponentProps) {
       <Header home={home} theme={theme} />
       <div className="container mx-auto p-4 lg:p-12 grid grid-cols-1 gap-4 lg:gap-12">
         {home?.title && pathname === '/' ? <Title>{home?.title}</Title> : null}
+        {home?.subtitle && pathname === '/' ? (
+          <Subtitle>{home?.subtitle}</Subtitle>
+        ) : null}
         <Outlet />
       </div>
-      <Footer home={home} />
       {sanity.preview ? (
         <Suspense>
           <SanityLiveMode />

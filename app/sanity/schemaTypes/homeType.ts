@@ -13,6 +13,11 @@ export const homeType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subtitle',
+      description: 'Subheading on the home page',
+      type: 'string',
+    }),
+    defineField({
       name: 'siteTitle',
       description: 'Displayed in header, footer and in meta tags',
       type: 'string',

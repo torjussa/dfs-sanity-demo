@@ -1,5 +1,5 @@
 import {visionTool} from '@sanity/vision'
-import {defineConfig} from 'sanity'
+import {defineConfig, isDev} from 'sanity'
 import {presentationTool} from 'sanity/presentation'
 import {structureTool} from 'sanity/structure'
 
@@ -9,13 +9,17 @@ import {projectDetails} from '~/sanity/projectDetails'
 import schema from '~/sanity/schemaTypes'
 import {defaultDocumentNode, structure} from '~/sanity/structure'
 
+const devOnlyPlugins = [visionTool({title: 'data'})]
+
+
 export default defineConfig({
   ...projectDetails(),
-  name: 'sanity-react-router',
-  title: 'Sanity x React Router',
+  name: 'dfs-demo',
+  title: 'DFS demo',
   plugins: [
-    structureTool({structure, defaultDocumentNode}),
+    structureTool({title: 'Innhold', structure, defaultDocumentNode}),
     presentationTool({
+      title: 'Forhåndsvisning',
       resolve,
       previewUrl: {
         previewMode: {
@@ -23,7 +27,7 @@ export default defineConfig({
         },
       },
     }),
-    visionTool(),
+    ...(isDev ? devOnlyPlugins : []),
   ],
   basePath: STUDIO_BASEPATH,
   schema: {
