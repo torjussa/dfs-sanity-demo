@@ -10,21 +10,21 @@ import {resolveOGUrl} from '~/sanity/structure/resolveOGUrl'
 export const structure: StructureResolver = (S) =>
   S.list()
     .id('root')
-    .title('Content')
+    .title('Innhold')
     .items([
       // Singleton, home page curation
       S.listItem()
         .icon(Home)
         .id('home')
         .schemaType('home')
-        .title('Home')
+        .title('Hjem')
         .child(S.editor().id('home').schemaType('home').documentId('home')),
       S.divider(),
       // Document lists
-      S.documentTypeListItem('record').title('Records').icon(Disc),
-      S.documentTypeListItem('artist').title('Artists').icon(Users),
+      S.documentTypeListItem('record').title('Album').icon(Disc),
+      S.documentTypeListItem('artist').title('Artister').icon(Users),
       S.divider(),
-      S.documentTypeListItem('genre').title('Genres').icon(Tags),
+      S.documentTypeListItem('genre').title('Sjangre').icon(Tags),
     ])
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
