@@ -10,7 +10,7 @@ export function Title({children}: PropsWithChildren) {
 
 export function Subtitle({children}: PropsWithChildren) {
   return (
-    <p className="max-w-3xl text-lg text-muted-foreground md:text-xl lg:text-2xl text-balance">
+    <p className="max-w-4xl text-lg text-muted-foreground md:text-xl lg:text-2xl">
       {children}
     </p>
   )
