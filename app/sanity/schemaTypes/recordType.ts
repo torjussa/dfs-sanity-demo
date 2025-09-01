@@ -81,6 +81,7 @@ export const recordType = defineType({
       of: [
         defineArrayMember({type: 'block'}),
         defineArrayMember({type: 'image', icon: ImageIcon}),
+        defineArrayMember({type: 'button'}),
       ],
       group: 'editorial',
     }),

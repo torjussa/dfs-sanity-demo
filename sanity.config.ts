@@ -16,6 +16,7 @@ export default defineConfig({
   ...projectDetails(),
   name: 'dfs-demo',
   title: 'DFS demo',
+  releases: {enabled: true},
   plugins: [
     structureTool({title: 'Innhold', structure, defaultDocumentNode}),
     presentationTool({
