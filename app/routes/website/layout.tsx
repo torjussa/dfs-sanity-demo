@@ -61,6 +61,7 @@ export default function Website({loaderData}: Route.ComponentProps) {
         {home?.subtitle && pathname === '/' ? (
           <Subtitle>{home?.subtitle}</Subtitle>
         ) : null}
+        <Subtitle>Gå til <a style={{textDecoration: 'underline'}} href="/studio">studioet</a> for å endre innholdet</Subtitle>
         <Outlet />
       </div>
       {sanity.preview ? (
