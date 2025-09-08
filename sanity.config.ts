@@ -20,9 +20,6 @@ export default defineConfig({
   releases: {enabled: true},
   plugins: [
     structureTool({title: 'Innhold', structure, defaultDocumentNode}),
-    googleMapsInput({
-        apiKey: "process.env.GOOGLE_MAPS_API_KEY",
-    }),
     presentationTool({
       title: 'Forhåndsvisning',
       resolve,
