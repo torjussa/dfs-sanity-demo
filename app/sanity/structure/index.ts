@@ -21,10 +21,10 @@ export const structure: StructureResolver = (S) =>
         .child(S.editor().id('home').schemaType('home').documentId('home')),
       S.divider(),
       // Document lists
-      S.documentTypeListItem('record').title('Album').icon(Disc),
-      S.documentTypeListItem('artist').title('Artister').icon(Users),
+      S.documentTypeListItem('record').title('Artikler').icon(Disc),
+      S.documentTypeListItem('artist').title('Forfattere').icon(Users),
       S.divider(),
-      S.documentTypeListItem('genre').title('Sjangre').icon(Tags),
+      S.documentTypeListItem('genre').title('Tags').icon(Tags),
     ])
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (

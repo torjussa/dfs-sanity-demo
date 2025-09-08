@@ -37,7 +37,6 @@ export const recordStubZ = z.object({
   _id: z.string(),
   _type: z.string(),
   title: z.string().nullable(),
-  releaseDate: z.string().nullable(),
   slug: z.string().nullable(),
   artist: z.string().nullable(),
   image: z.any().nullable(),

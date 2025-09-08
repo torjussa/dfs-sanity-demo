@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 
 export const genreType = defineType({
   name: 'genre',
-  title: 'Genre',
+  title: 'Tema',
   type: 'document',
   icon: Tags,
   fields: [

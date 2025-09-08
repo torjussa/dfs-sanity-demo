@@ -12,7 +12,7 @@ export const recordType = defineType({
       name: 'rating',
       title: 'Rating',
       description:
-        'These fields are written to from the React Router front end',
+        'Disse feltene oppdateres basert på brukerinteraksjon på nettsiden',
       options: {columns: 2},
     },
   ],
@@ -48,10 +48,6 @@ export const recordType = defineType({
       group: 'details',
     }),
     defineField({
-      name: 'releaseDate',
-      type: 'datetime',
-    }),
-    defineField({
       name: 'likes',
       type: 'number',
       readOnly: true,
@@ -65,18 +61,22 @@ export const recordType = defineType({
     }),
     defineField({
       name: 'artist',
+      title: 'Forfatter',
       type: 'reference',
       to: [{type: 'artist'}],
       group: 'details',
     }),
     defineField({
       name: 'genres',
+      title: 'Tags',
+      description: 'Relevante tags for artikkelen',
       type: 'array',
       of: [{type: 'reference', to: {type: 'genre'}}],
       group: 'details',
     }),
     defineField({
       name: 'content',
+      title: 'Innhold',
       type: 'array',
       of: [
         defineArrayMember({type: 'block'}),
@@ -87,13 +87,16 @@ export const recordType = defineType({
     }),
     defineField({
       name: 'image',
+      title: 'Bilde',
       type: 'image',
       options: {hotspot: true},
       group: 'editorial',
-      fields: [defineField({name: 'alt', type: 'string'})],
+      fields: [defineField({name: 'alt', description: 'Her kan vi bruke AI funksjoner til å generere en beskrivelse av bildet', type: 'string'})],
     }),
     defineField({
       name: 'tracks',
+      title: 'Sanger (eksempel)',
+      description: 'Man kan lage alle mulige komponenter for å legge til andre innholdstyper.',
       type: 'array',
       of: [{type: 'track'}],
       group: 'tracks',

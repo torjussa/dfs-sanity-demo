@@ -1,4 +1,5 @@
 import {visionTool} from '@sanity/vision'
+import {googleMapsInput} from '@sanity/google-maps-input'
 import {defineConfig, isDev} from 'sanity'
 import {presentationTool} from 'sanity/presentation'
 import {structureTool} from 'sanity/structure'
@@ -19,6 +20,9 @@ export default defineConfig({
   releases: {enabled: true},
   plugins: [
     structureTool({title: 'Innhold', structure, defaultDocumentNode}),
+    googleMapsInput({
+        apiKey: "process.env.GOOGLE_MAPS_API_KEY",
+    }),
     presentationTool({
       title: 'Forhåndsvisning',
       resolve,
